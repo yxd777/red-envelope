@@ -1,16 +1,16 @@
-import { Pool } from "pg";
+import { Pool } from 'pg'
 
-let globalPool: Pool;
-
+let globalPool: Pool
+//1
 export function getDb() {
   if (!globalPool) {
-    const connectionString = process.env.POSTGRES_URL;
-    console.log("connectionString", connectionString);
+    const connectionString = process.env.POSTGRES_URL
+    console.log('connectionString', connectionString)
 
     globalPool = new Pool({
-      connectionString,
-    });
+      connectionString
+    })
   }
 
-  return globalPool;
+  return globalPool
 }
